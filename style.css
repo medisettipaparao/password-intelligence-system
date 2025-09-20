@@ -1,0 +1,80 @@
+:root {
+    --background-color: #030712;
+    --card-color: rgba(17, 24, 39, 0.8);
+    --border-color: rgba(55, 65, 81, 0.5);
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --accent-glow: rgba(59, 130, 246, 0.5);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+.font-mono {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.card {
+    background-color: var(--card-color);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+}
+
+.strength-meter-bar {
+    transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.status-indicator {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.loader {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.chart-container .bar {
+    transition: y 0.3s ease, height 0.3s ease, fill 0.3s ease;
+}
+
+.chart-container .axis-text {
+    fill: var(--text-secondary);
+    font-size: 10px;
+}
+
+.chart-container .bar-label {
+    fill: var(--text-primary);
+    font-size: 11px;
+    font-weight: 500;
+    transition: y 0.3s ease;
+}
+
+.chart-container .domain,
+.chart-container .tick line {
+    stroke: #4b5563;
+}
+
+.info-modal {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
